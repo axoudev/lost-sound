@@ -1,0 +1,24 @@
+#ifndef STATMANAGER_H
+#define STATMANAGER_H
+
+#include <Arduino.h>
+#include <cmath>  // Include cmath for standard deviation calculation
+
+class StatManager {
+public:
+    StatManager(int numPins);
+    void addValues(int* pinValues);
+    float* getAverages();
+    float* getMeans();
+    int* getMinimums();
+    int* getMaximums();
+    float* getStandardDeviations();
+    float* getVariances();
+
+private:
+    int* values;
+    int* counts;
+    int numPins;
+};
+
+#endif
