@@ -1,18 +1,23 @@
-#ifndef STATMANAGER_H
-#define STATMANAGER_H
-
-#include <Arduino.h>
+#ifndef STATMANAGER_HPP
+#define STATMANAGER_HPP
 
 class StatManager {
 public:
-    StatManager(int numPins);
-    void addValues(int* pinValues);
-    float* getAverages();
+  StatManager(int numPins);
+  ~StatManager();
+
+  void addValues(int* pinValues);
+  float* getAverages();
+  float* getMedians();
+  float* getMinimums();
+  float* getMaximums();
+  float* getStandardDeviations();
+  float* getVariances();
 
 private:
-    int* values;
-    int* counts;
-    int numPins;
+  int numPins;
+  int** values;
+  int* counts;
 };
 
 #endif
