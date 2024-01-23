@@ -1,5 +1,5 @@
 #include "StatManager.hpp"
-#include <cmath>
+#include <math.h>
 
 StatManager::StatManager(int numPins) {
   this->numPins = numPins;
@@ -87,38 +87,6 @@ float* StatManager::getMedians() {
   }
 
   return medians;
-}
-
-float* StatManager::getMinimums() {
-  float* minimums = new float[numPins];
-
-  for (int i = 0; i < numPins; ++i) {
-    int minVal = (counts[i] > 0) ? values[i][0] : 0;
-    for (int j = 1; j < counts[i]; ++j) {
-      if (values[i][j] < minVal) {
-        minVal = values[i][j];
-      }
-    }
-    minimums[i] = minVal;
-  }
-
-  return minimums;
-}
-
-float* StatManager::getMaximums() {
-  float* maximums = new float[numPins];
-
-  for (int i = 0; i < numPins; ++i) {
-    int maxVal = (counts[i] > 0) ? values[i][0] : 0;
-    for (int j = 1; j < counts[i]; ++j) {
-      if (values[i][j] > maxVal) {
-        maxVal = values[i][j];
-      }
-    }
-    maximums[i] = maxVal;
-  }
-
-  return maximums;
 }
 
 float* StatManager::getStandardDeviations() {

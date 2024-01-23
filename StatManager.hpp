@@ -18,11 +18,6 @@ public:
   // Calcule la médiane des valeurs
   float* getMedians();
 
-  // Calcule les minimums des valeurs
-  float* getMinimums();
-
-  // Calcule les maximums des valeurs
-  float* getMaximums();
 
   // Calcule les écarts types des valeurs
   float* getStandardDeviations();

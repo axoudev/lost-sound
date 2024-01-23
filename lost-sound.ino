@@ -9,7 +9,7 @@ const int LOOP_DELAY = 1000; //milliseconds
 const int NB_ANALOG_PINS = 3; 
  
 const int analogPins[] = {A0, A1, A2}; 
- 
+ /
 StatManager statManager(NB_ANALOG_PINS); 
  
 //VARIABLES 
