@@ -5,7 +5,7 @@
 const int MAX_TENSION = 5; // 5.0 V from Arduino, 
 const int RESOLUTION = 1023; //10 bit resolution = 1024 steps 
 const int TRANSMISSION_SPEED = 9600; // 9600 bits per second 
-const int LOOP_DELAY = 200; //milliseconds 
+const int LOOP_DELAY = 1000; //milliseconds 
 const int NB_ANALOG_PINS = 3; 
  
 const int analogPins[] = {A0, A1, A2}; 
@@ -22,6 +22,7 @@ void setup() {
  
 void loop() { 
   printAnalogValues(); 
+  
  
   delay(LOOP_DELAY); 
 } 
@@ -42,7 +43,6 @@ float analogToVolt(int analogValue) {
   * Prints analog value in serial monitor 
 */ 
 void printAnalogValues() { 
-
   int pinValues[NB_ANALOG_PINS]; 
   
   for (int i = 0; i < NB_ANALOG_PINS; i++) {
@@ -73,5 +73,5 @@ void printAnalogValues() {
   delete[] medians;
   delete[] deviations;
   delete[] variances;
-  delete[] pinValues;
+  // delete[] pinValues;
 } 

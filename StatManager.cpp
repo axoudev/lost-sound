@@ -147,7 +147,6 @@ float* StatManager::getStandardDeviations() {
 float* StatManager::getVariances() {
   float* variances = new float[numPins];
 
-  // Stockez les moyennes dans une variable locale
   float* averages = getAverages();
 
   for (int i = 0; i < numPins; ++i) {
@@ -162,7 +161,6 @@ float* StatManager::getVariances() {
     }
   }
 
-  // Libérez la mémoire allouée pour les moyennes
   delete[] averages;
 
   return variances;
